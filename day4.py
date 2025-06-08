@@ -47,11 +47,10 @@
 # print(num[a])
 
 #quiz app logic
-score = 0
 questions = [
     {
         'que':"What is Vijay Mallya best known for in the business world?",
-        'option':[{'A': "A - Bollywood films",'B':"Software development",'C':"Liquor and airline industry",'D':"Real estate"}],
+        'option':[{'A': "A - Bollywood films",'B':"B - Software development",'C':"C - Liquor and airline industry",'D':"D - Real estate"}],
         'answer':'C'
     },
     {
@@ -75,16 +74,24 @@ questions = [
         'answer':'C'
     }
 ]
-for que in questions:
-    print(que['que'])
-    print("Select any one option from given below : ")
-    for opt in que['option']:
-        print(opt['A'])
-        print(opt['B'])
-        print(opt['C'])
-        print(opt['D'])
-    ans = input("Enter your choice : ")
-    if ans.upper() in que['answer']:
-        score += 1
-    
-print("Your score is : ",score)
+while True:
+    score = 0
+    for que in questions:
+        print(que['que'])
+        print("Select any one option from given below : ")
+        for opt in que['option']:
+            print(opt['A'])
+            print(opt['B'])
+            print(opt['C'])
+            print(opt['D'])
+        ans = input("Enter your choice : ")
+        if ans.upper() in que['answer']:
+            score += 1
+    op = input("Want to play again (y/n) : ")
+    if op.lower() == 'n':
+        name = input("Enter your name : ")
+        break
+    # print("Your score is : ",score)
+with open("record.txt",'a') as rec:
+    rec.write(f"\n{name} scores {score}")
+
