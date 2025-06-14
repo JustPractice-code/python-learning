@@ -74,7 +74,7 @@ questions = [
         'answer':'C'
     }
 ]
-while True:
+def run_quiz():
     score = 0
     for que in questions:
         print(que['que'])
@@ -87,11 +87,9 @@ while True:
         ans = input("Enter your choice : ")
         if ans.upper() in que['answer']:
             score += 1
+    print(f"Your score is {score}")
+while True:
+    run_quiz()
     op = input("Want to play again (y/n) : ")
     if op.lower() == 'n':
-        name = input("Enter your name : ")
         break
-    # print("Your score is : ",score)
-with open("record.txt",'a') as rec:
-    rec.write(f"\n{name} scores {score}")
-
