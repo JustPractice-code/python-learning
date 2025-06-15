@@ -1,0 +1,7 @@
+
+New record : 
+Student name : jash
+Marks details with subject : 
+90 in maths
+98 in physics
+97 in biology
